@@ -1,6 +1,14 @@
 template formula
 ================
 
+UNRELEASED
+
+* Add elasticsearch plugin
+
+1.0.0
+
+* Add support for the df ValuesPercentage setting
+
 0.0.6 (2014-08-18)
 
 - Created collectd formula
