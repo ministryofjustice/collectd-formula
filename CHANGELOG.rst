@@ -1,5 +1,24 @@
-template formula
+collectd formula
 ================
+
+1.1.3
+
+* set default for python.Interactive
+
+1.1.2
+
+* Removed 2 offending lines which break the plugin
+* Cleaned up code
+* Fixed README
+* Updated README
+* Set the `ValuesPercentage` to true for the `df` plugin   - This will generate the `df.<fs>.percent_bytes` metrics in addition to the `df.<fs>.df_complex` metric   - The advantage is that we have the % of free disk space (or used) and we don't need to calculate it
+* Add write reimann plugin
+
+1.1.1
+
+* Add documentation on how to add a new plugin
+* Add the elasticsearch plugin to the documentation
+* Add LogTraces default for python module
 
 1.1.0
 
