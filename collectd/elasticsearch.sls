@@ -4,14 +4,18 @@ include:
   - collectd
   - collectd.python
 
-collectd-elasticsearch-module:
-  pip.installed:
-  - name: git+https://github.com/ministryofjustice/elasticsearch-collectd-plugin
-  - require_in:
-    - service: collectd
-  - watch_in:
-    - service: collectd
-
+elasticsearch-collectd-plugin:
+  git.latest:
+    - name: https://github.com/signalfx/collectd-elasticsearch.git
+    - target: {{ collectd_settings.moduledirconfig }}/python/elasticsearch
+    - rev: {{ collectd_settings.plugins.elasticsearch.rev }}
+    - force_checkout: True
+    - force_clone : True
+    - force_reset : True
+    - require_in:
+      - service: collectd
+    - watch_in:
+      - service: collectd
 
 {{ collectd_settings.plugindirconfig }}/elasticsearch.conf:
   file.managed:
