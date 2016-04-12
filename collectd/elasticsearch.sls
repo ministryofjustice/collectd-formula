@@ -4,14 +4,27 @@ include:
   - collectd
   - collectd.python
 
-collectd-elasticsearch-module:
-  pip.installed:
-  - name: git+https://github.com/ministryofjustice/elasticsearch-collectd-plugin
-  - require_in:
-    - service: collectd
-  - watch_in:
-    - service: collectd
+collectd-elasticsearch-plugin:
+  git.latest:
+    - name: https://github.com/phobos182/collectd-elasticsearch.git
+    - target: {{ collectd_settings.moduledirconfig }}/collectd-elasticsearch
+    - rev: {{ collectd_settings.plugins.elasticsearch.rev }}
+    - force_reset : True
+    - force_fetch : True
+    - force_clone : True
+    - force_checkout : True
+    - require_in:
+      - service: collectd
+    - watch_in:
+      - service: collectd
 
+collectd-elasticsearch-plugin-symlink:
+  file.symlink:
+    - name: {{ collectd_settings.moduledirconfig }}/collectd-elasticsearch.py
+    - target: {{ collectd_settings.moduledirconfig }}/collectd-elasticsearch/elasticsearch.py
+    - force: True
+    - require_in:
+      - git: collectd-elasticsearch-plugin
 
 {{ collectd_settings.plugindirconfig }}/elasticsearch.conf:
   file.managed:
