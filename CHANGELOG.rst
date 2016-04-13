@@ -1,6 +1,10 @@
 collectd formula
 ================
 
+v2.0.0
+
+* Rename the elasticsearch plugin to avoid conflict
+
 1.1.3
 
 * set default for python.Interactive
