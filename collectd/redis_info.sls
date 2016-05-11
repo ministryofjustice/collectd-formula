@@ -7,6 +7,7 @@ include:
 collectd-redis-module:
   pip.installed:
   - name: git+https://github.com/ministryofjustice/redis-collectd-plugin@make-it-a-pip
+  - upgrade: True
   - require_in:
     - service: collectd
   - watch_in:
