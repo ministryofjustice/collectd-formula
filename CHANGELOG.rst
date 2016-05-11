@@ -1,6 +1,11 @@
 collectd formula
 ================
 
+v2.0.1
+
+* Always upgrade redis plugin
+* Always upgrade elasticsearch plugin
+
 v2.0.0
 
 * Rename the elasticsearch plugin to avoid conflict
