@@ -7,6 +7,7 @@ include:
 collectd-elasticsearch-module:
   pip.installed:
   - name: git+https://github.com/ministryofjustice/elasticsearch-collectd-plugin
+  - upgrade: True
   - require_in:
     - service: collectd
   - watch_in:
