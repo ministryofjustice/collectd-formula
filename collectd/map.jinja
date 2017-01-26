@@ -40,6 +40,7 @@
         'Timeout': 2,
         'ReadThreads': 5,
         'FQDNLookup': 'false',
+        'localmoduledirconfig': '/usr/local/share/collectd/modules',
         'plugins': {
             'default': [
                 'battery',
@@ -71,6 +72,10 @@
             'disk': {
                 'matches': [],
                 'IgnoreSelected': 'false'
+            },
+            'docker': {
+                'socket_path': '/var/run/docker.sock',
+                'timeout': 3
             },
             'enable': false,
             'ethstat': {
