@@ -1,6 +1,10 @@
 collectd formula
 ================
 
+v2.1.0
+
+* Add docker plugin to collect docker stats
+
 v2.0.1
 
 * Always upgrade redis plugin

@@ -184,6 +184,11 @@ Enables and configures the df plugin.
 
 Enables and configures the disk plugin.
 
+``collectd.docker``
+~~~~~~~~~~~~~~~~~
+
+Enables and configures the `docker statistics plugin <https://github.com/ministryofjustice/docker-collectd-plugin>`_.
+
 ``collectd.elasticsearch``
 --------------------------
 
