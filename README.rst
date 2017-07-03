@@ -18,6 +18,11 @@ Contents
 Usage
 -----
 
+.. note::
+
+    The formula sets common defaults so in most cases will only require the 
+    states to be loaded in the top.sls file.
+
 Custom state file
 ~~~~~~~~~~~~~~~~~
 

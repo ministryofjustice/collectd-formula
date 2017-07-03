@@ -1,3 +1,6 @@
+{% set application=salt['grains.get']('Application', 'unknown') %}
+{% set env=salt['grains.get']('Env', 'unknown') %}
+
 {% set os_map = salt['grains.filter_by']({
     'Debian': {
         'config': '/etc/collectd/collectd.conf',
@@ -126,7 +129,7 @@
             'write_graphite': {
                 'host': salt['grains.get']('fqdn'),
                 'port': 2003,
-                'prefix': 'collectd',
+                'prefix': 'collectd.' + application,
                 'postfix': ''
             },
             'write_riemann': {
