@@ -12,6 +12,8 @@ collectd-elasticsearch-module:
     - service: collectd
   - watch_in:
     - service: collectd
+  - env_vars:
+    LC_ALL: C
 
 
 {{ collectd_settings.plugindirconfig }}/elasticsearch.conf:
